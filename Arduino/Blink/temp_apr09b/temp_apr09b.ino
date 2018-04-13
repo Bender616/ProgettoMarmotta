@@ -25,11 +25,13 @@ void setup(){
 void loop()
 {
   int chk = DHT.read11(DHT11_PIN);
+  hum = DHT.humidity;
+  temp = DHT.temperature;
   Serial.print("Temperature = ");
-  Serial.println(DHT.temperature);
+  Serial.println(temp);
   Serial.print("Humidity = ");
-  Serial.println(DHT.humidity);
-  H = DHT.humidity;
+  Serial.println(hum);
+  
   
   
        //suona nota sul pin 12 alla frequenza di 1000Hz                     

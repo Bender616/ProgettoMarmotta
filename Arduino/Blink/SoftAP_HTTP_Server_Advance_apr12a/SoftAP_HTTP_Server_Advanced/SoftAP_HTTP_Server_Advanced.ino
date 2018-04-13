@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
-#include <dht.h>/////////////////
+
 
 const char *ssid = "ProjectMarmotta";
 const char *password = "strategy";
@@ -9,7 +9,7 @@ const char *password = "strategy";
 
 int numClientOLD = 0;
 int numClientCUR = 0;
-int sensorPin= 12 //////
+int sensorPin= 12; //////
 float temp =  00.00;
 float hum = 00.00;
 int ledValue = 0;/////
@@ -17,34 +17,51 @@ int ledPin = 7; // Digital I/O ARDUINO
 
 //#define DHT11_PIN 12
 
-char varHomePage[700];
+char varHomePage[1000];
 
 ESP8266WebServer server(80);
 
 void makeHomePage(){
-   snprintf(varHomePage, 700, ////////////////?
+   snprintf(varHomePage, 1000,
     "<html>\
+        <head>\
+          <meta http-equiv='refresh' content='5'/>\
+          <title>Home Page</title>\
+          <style>\
+              body { background-color: #cccccc; font-family: Arial, Helvetica, Sans-Serif; Color: #000088; }\
+          </style>\
+        </head>\
+        <body>\
+           <h1>ESP8266 MONITORAGGIO LED - %s</h1>\
+           <p>Il LED pin %s &eacute %s</p>\
+           <p>Il hum e temp pin %s &eacute %s</p>\
+           <p>Premi su <a href=\"/LED=ON\">ON</a> per accendere  </p>\
+           <p>Premi su <a href=\"/LED=OFF\">OFF</a> per spegnere </p>\
+        </body>\
+      </html>", "%s1", "%02d", "%03d","%04f","%04f"
+   
+    );
+}
+ /*" <html>\
       <head>\
       <title>Domus Aurea Web</title>\
       <style>\
-        h1{font-family:Verdana;}
-        p{font-size:20px;}
-      </style>\
-      <meta name="description" content="Questa è l'interfaccia web della Domus Aurea">\
-      <meta name="keywords" content="domusaurea,web,interfaccia,saas,iot,internet of things,arduino,progetto">\
+        h1{font-family:Verdana;}\
+        p{font-size:20px;}\
+      </style>\     
       </head>\
       <body>\
       <center><h1 >Domus Web %s </h1><br><br>\
-      <p >Il LED pin: %s &eacute %s<\p>
-      <p >HUMIDITY: %s<\p>
-      <p >TEMPERATURE: %s<\p>
+      <p >Il LED pin: %s &eacute %s<\p>\
+      <p >HUMIDITY: %s<\p>\
+      <p >TEMPERATURE: %s<\p>\
       <p >Premi questo tasto per accendere <input href="/LED=ON" type="button" value="Accendi" style="background-color:green; font-weight:bold;"></input></p><br><br>\
-      <hr>
+      <hr>\
       <p >Premi questo tasto per spegnere <input href="/LED=OFF" type="button" value="Spegni" style="background-color:red; font-weight:bold;"></p></input>\
       </center>\
       </body>\
-     </html>"/, "%s1", "%02d", "%03d","%04f","%04f"
-   /* "<html>\
+     </html> " , "%s1", "%02d", "%03d","%04f","%04f"*/
+/* "<html>\
         <head>\
           <meta http-equiv='refresh' content='5'/>\
           <title>Home Page</title>\
@@ -59,16 +76,13 @@ void makeHomePage(){
            <p>Premi su <a href=\"/LED=OFF\">OFF</a> per spegnere</p>\
         </body>\
       </html>", "%s1", "%02d", "%03d"*/
-    );
-}
-
 void handleTemp(){
   
   
   }
  
 void handleRoot() {
-  Serial.read("%d",DHT11_PIN);
+    Serial.read("%d",sensorPin);
     Serial.read(temp);///////////////
     Serial.read(hum);//////////////// CONTROLLO TEMP
 
@@ -86,7 +100,7 @@ void handleRoot() {
 
 void handleLedON(){
   
-  Serial.read("%d",DHT11_PIN);
+  Serial.read("%d",sensorPin);
     Serial.read(temp);///////////////
     Serial.read(hum);//////////////// CONTROLLO TEMP
   
@@ -109,7 +123,7 @@ void handleLedON(){
     server.send(200, "text/html",varTemp);
 }
 void handleLedOFF(){
-    Serial.read("%d",DHT11_PIN);
+    Serial.read("%d",sensorPin);
     Serial.read(temp);///////////////
     Serial.read(hum);//////////////// CONTROLLO TEMP
   
