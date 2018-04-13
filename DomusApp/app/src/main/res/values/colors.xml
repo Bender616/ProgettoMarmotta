@@ -9,7 +9,8 @@
     <color name="colorbtnautomatico">#EFEFEF</color>
     <color name="colorbtnManuale">#EFEFEF</color>
     <color name="coloract4">#D2D2D2</color>
-
-
+    <color name="colorbtninfo">#e1e1e1</color>
+    <color name="colorbtnlogin">#bc1313</color>
+    <color name="colorsfondo">#D2D2D2</color>
 
 </resources>
