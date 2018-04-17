@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText password;
     private Button login;
     private TextView info;
+    private TextView info2;
     private int counter = 3;
 
     @Override
@@ -25,9 +26,10 @@ public class LoginActivity extends AppCompatActivity {
         user = (EditText)findViewById(R.id.editTextUser);
         password = (EditText)findViewById(R.id.editTextPassword);
         info = (TextView)findViewById(R.id.tvInfo);
+        info2 = (TextView)findViewById(R.id.tvinfo2);
         login = (Button)findViewById(R.id.buttonLogin);
 
-        info.setText("Tentativi rimasti: 3");
+        info.setText("Tentativi di accesso rimasti: 3");
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,11 +45,13 @@ public class LoginActivity extends AppCompatActivity {
         }else {
             counter--;
 
-            info.setText("Tentativi rimasti: "+String.valueOf(counter));
+            info.setText("Tentativi di accesso rimasti: "+String.valueOf(counter));
             Toast.makeText(getApplicationContext(),"Login Errato, riprova!",Toast.LENGTH_SHORT).show();
 
             if(counter == 0) {
                 login.setEnabled(false);
+                info2.setText("Hai esaurito i tentativi a disposizione!");
+
             }
         }
     }

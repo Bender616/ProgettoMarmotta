@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TestoActivity">
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="347dp"
+        android:layout_height="224dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="INTRODUCTION -Thermal comfort refers to the condition of mind that expresses satisfaction with the thermal environment and is evaluated by subjective evaluation. Over the years, a large amount of empirical data has been obtained on how these parameters are determined. This article describes the thermal comfort with regard to temperature and humidity. Certain factors have significant influence on the thermal comfort of a occupant's space and thus can be divided into personal and environmental factors. Personal factors include clothing and personal activity and condition, while environmental factors comprise thermal radiation, temperature, air speed and humidity "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="347dp"
+        android:layout_height="258dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="CONDITIONS OF THERMAL COMFORT - The feeling of comfort and awareness of the environmental conditions are associated with metabolic heat production and the ensuing adjustments of body temperature. In order to define a comfort zone of external parameters, it is vital to know the activity of an individual person. For instance, whether people are working or sitting in an office, doing exercise in a gym, or hiking outdoors. Clothing is the second most important parameter. Its insulating properties is a vital parameter of body heat loss/conservation and thus for feeling thermal comfort. Seasonal weather conditions are influencing clothing to a great extent. Hence, the limitations for external parameters defining a comfort zone depend on the season."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnforward2"
+        android:layout_width="47dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="4dp"
+        android:text="-->"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</android.support.constraint.ConstraintLayout>

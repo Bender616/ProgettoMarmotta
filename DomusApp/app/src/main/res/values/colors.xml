@@ -12,5 +12,8 @@
     <color name="colorbtninfo">#e1e1e1</color>
     <color name="colorbtnlogin">#bc1313</color>
     <color name="colorsfondo">#D2D2D2</color>
+    <color name="colorsplash">#000000</color>
+    <color name="colorbarra">#000000</color>
+
 
 </resources>

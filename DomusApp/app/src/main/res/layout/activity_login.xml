@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="27dp"
         android:fontFamily="casual"
         android:text="Login Page"
         android:textAlignment="center"
@@ -24,11 +24,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="210dp"
-        android:layout_height="169dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="155dp"
+        android:layout_height="195dp"
+        android:layout_above="@+id/editTextUser"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="99dp"
         app:srcCompat="@drawable/login" />
 
     <EditText
@@ -78,12 +77,24 @@
 
     <TextView
         android:id="@+id/tvInfo"
-        android:layout_width="150dp"
+        android:layout_width="242dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="37dp"
-        android:text="Tentativi rimasti: "
+        android:text="Tentativi di accesso rimasti: "
+        android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvinfo2"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-37dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="14sp" />
 </RelativeLayout>

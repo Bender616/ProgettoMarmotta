@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     Button btncambio;
     Button btnmenu;
     Button btninfo;
+    Button btnrht;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btncambio = (Button)findViewById(R.id.btncambio);
         btnmenu = (Button)findViewById(R.id.btnMenu);
         btninfo = (Button)findViewById(R.id.btninfo);
+        btnrht = (Button)findViewById(R.id.btnrht);
 
         btninfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +43,18 @@ public class MainActivity extends AppCompatActivity {
                 openActivity2();
             }
         });
+        btnrht.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRHTActivity();
+            }
+        });
     }
+    public void openRHTActivity() {
+        Intent intent = new Intent(this, RHTActivity.class);
+        startActivity(intent);
+    }
+
     public void openActivity2() {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
