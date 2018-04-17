@@ -15,5 +15,10 @@
     <color name="colorsplash">#000000</color>
     <color name="colorbarra">#000000</color>
 
+    <color name="red">#CC1616</color>
+    <color name="blue">#1622CC</color>
+    <color name="green">#00ff00</color>
+
+
 
 </resources>
