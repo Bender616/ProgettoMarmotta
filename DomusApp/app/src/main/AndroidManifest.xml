@@ -3,6 +3,7 @@
     package="com.example.corsosystem.domusapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +26,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RHTActivity" />
         <activity android:name=".TestoActivity" />
-        <activity android:name=".Testo2Activity"></activity>
+        <activity android:name=".Testo2Activity" />
+        <activity android:name=".WebActivity"></activity>
     </application>
 
 </manifest>

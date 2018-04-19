@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        double fakeTemp = 27.05;
-        double fakeRH = 65.05;
+        double fakeTemp = 24.00;
+        double fakeRH = 40.00;
 
         btncambio = (Button)findViewById(R.id.btncambio);
         btnmenu = (Button)findViewById(R.id.btnMenu);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         btnmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity3();
+                openWebActivity();
             }
         });
 
@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
-    public void openActivity3() {
-        Intent intent = new Intent(this, Main3Activity.class);
+    public void openWebActivity() {
+        Intent intent = new Intent(this, WebActivity.class);
         startActivity(intent);
     }
     public void openActivity4() {
